@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+  <!-- 
+  
+     Setter cyclic injection
+     <bean id="sta" class="com.application.bean.Staff">
+       <property name="dept"  ref="dep"/>
+    </bean>
+    
+    <bean id="dep" class="com.application.bean.Department">
+       <property name="staff" ref="sta"/>
+    </bean> 
+   -->
+   
+   <!-- 
+   
+      Constructor Cyclic injection
+           <bean id="staff" class="com.application.bean.Staff">
+      <constructor-arg name="dept" 
+                       type="com.application.bean.Department" 
+                       index="0"
+                       ref="department" 
+      />
+   </bean>
+   
+   <bean id="department" class="com.application.bean.Department">
+      <constructor-arg
+        name="staff"
+        type="com.application.bean.Staff"
+        index="0"
+        ref="staff"
+      />
+   </bean>
+    -->
+    
+    <bean id="d" class="com.application.bean.Department">
+        <constructor-arg name="staff" ref="s"/>
+    </bean>
+    
+    <bean id="s" class="com.application.bean.Staff">
+       <property name="dept" ref="d"/>
+    </bean>
+
+    
+
+</beans>

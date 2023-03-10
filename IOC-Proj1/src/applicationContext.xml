@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+
+    <bean id="dt" class="java.util.Date" />
+    <bean id="stu" class="com.application.bean.Student"/>
+     <bean id="wish" class="com.application.bean.WishMessageGenerator">
+        <property name="date" ref="dt"/>
+        <property name="student" ref="stu"/> 
+     </bean>
+    
+
+
+</beans>

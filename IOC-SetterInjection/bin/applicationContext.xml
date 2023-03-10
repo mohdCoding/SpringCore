@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+
+    <bean id="tuts" class="bean.Course"> 
+       <property name="name" value="Java"/>
+       <property name="fees" value="4000"/>
+       <property name="duration" value="6"/>
+       <property name="teacher" value="Nithin"/>
+    </bean>
+    <bean id="ls" class="java.util.ArrayList"/> 
+    
+    
+    <bean id="wish" class="bean.Ineuron">
+       <property name="course" ref="tuts"/>
+       <property name="list" ref="ls"/>
+    </bean>
+
+    
+
+</beans>

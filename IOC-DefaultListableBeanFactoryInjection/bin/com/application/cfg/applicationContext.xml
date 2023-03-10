@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   
+   <bean id="user" class="com.application.bean.Person">
+      <constructor-arg name="name" type="java.lang.String" value="Cristiano Ronaldo"/>
+      <constructor-arg name="age" type="java.lang.Integer" value="38"/>
+      <constructor-arg name="addr" type="java.lang.String" value="Portugal"/>
+   </bean>
+   
+   <bean id="user3" class="com.application.bean.Person">
+      <property name="name" value="Ronaldinho Gaucho"/>
+      <property name="age" value="48"/>
+      <property name="addr" value="Brazil"/>
+   </bean>
+   
+   
+
+
+</beans>

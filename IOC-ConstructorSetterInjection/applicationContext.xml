@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- Dependant Object -->
+   <bean id="dt" class="java.util.Date"> 
+      <property name="year" value="2003"/>
+      <property name="month" value="3"/>
+      <property name="date" value="4"/>
+   </bean>
+   
+   <bean id="dt1" class="java.util.Date"/>
+   
+   <!-- Target Object -->
+   <bean id="wmg" class="com.application.bean.WishMessanger">
+      <property name="date" ref="dt"/>
+      <constructor-arg name="date" ref="dt1" type="java.util.Date" index="0"/>
+      <constructor-arg name="name" value="Haroon" type="java.lang.String" index="1"/>
+      <constructor-arg name="age"  value="19" type="java.lang.Integer" index="2"/>
+      <constructor-arg name="course" value="Java FullStack With SpringBoot Microservices..." type="java.lang.String" />
+   </bean>
+
+</beans>
